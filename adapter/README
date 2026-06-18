@@ -1,0 +1,20 @@
+cd ~/sdv_lidar_pipeline/adapter/build
+rm -rf *
+
+cmake .. \
+  -DBOOST_ROOT=/usr/local \
+  -DBoost_NO_SYSTEM_PATHS=ON
+
+make -j$(nproc)
+
+cd ~/sdv_lidar_pipeline/adapter/build
+
+export VSOMEIP_CONFIGURATION=./vsomeip_adapter.json
+export VSOMEIP_APPLICATION_NAME=lidar_adapter
+
+./lidar_adapter
+
+TERMINAL 2
+ cd ~/sdv_lidar_pipeline/emulator$ 
+
+Python3 lidar_sensor_emulator.py 

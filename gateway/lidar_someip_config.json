@@ -1,0 +1,24 @@
+    
+{
+    "unicast": "127.0.0.1",
+    "logging": {
+        "level": "info",
+        "console": "true"
+    },
+    "applications": [{
+        "name": "lidar_gateway",
+        "id": "0x1302"
+    }],
+    "services": [{
+        "service": "0x1234",
+        "instance": "0x0001",
+        "unreliable": "30509"
+    }],
+    "routing": "lidar_adapter",
+    "service-discovery": {
+        "enable": "true",
+        "multicast": "224.0.0.1",
+        "port": "30490",
+        "protocol": "udp"
+    }
+}
