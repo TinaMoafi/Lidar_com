@@ -5,12 +5,13 @@
 struct Ray {
     double   timestamp;
     uint32_t ray_id;
-    float    x, y, z;
+    float    x;
+    float    y;
+    float    z;
     float    intensity;
 };
 
 struct LidarFrame {
-    uint32_t         ray_count;
-    double           timestamp;   // from first ray
+    double           timestamp = 0.0;
     std::vector<Ray> rays;
 };
